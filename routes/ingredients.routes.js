@@ -5,8 +5,14 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
 
-    const ingredients = await db.query('SELECT * from ingredient;');
-    res.json(ingredients.rows);
+    try{
+        const ingredients = await db.query('SELECT * from ingredient;');
+        res.json(ingredients.rows);
+    }
+    catch(error) {
+        console.log(error);
+        res.status(500).json({errorMessage: 'Internal Server error.'});
+    }
 
 });
 
