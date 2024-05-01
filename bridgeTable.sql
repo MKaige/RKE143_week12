@@ -106,3 +106,6 @@ SET instructions =
     <br>Stir in the heavy cream and season with salt and pepper.
     <br>Heat through and serve.'
 WHERE id = 3;
+
+
+SELECT * FROM recipe WHERE recipename = 'Pumpkin Pancakes';
